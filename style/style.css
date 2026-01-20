@@ -1,0 +1,151 @@
+:root {
+    --hacker-red: #ff003c;
+    --hacker-red-dim: #80001e;
+    --bg-black: #0a0a0a;
+    --glitch-blue: #00f2ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-black);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Hiệu ứng Matrix phía sau */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.matrix-bg span {
+    position: absolute;
+    color: var(--hacker-red-dim);
+    font-size: 20px;
+    animation: rain linear infinite;
+}
+
+@keyframes rain {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Container chính */
+.main-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+/* Cổng Torii phong cách Cyberpunk */
+.cyber-torii {
+    width: 120px;
+    height: 80px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.torii-top {
+    width: 100%;
+    height: 8px;
+    background: var(--hacker-red);
+    box-shadow: 0 0 20px var(--hacker-red);
+    border-radius: 2px;
+}
+
+.torii-pillar {
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    background: var(--hacker-red);
+    bottom: 0;
+    box-shadow: 0 0 15px var(--hacker-red);
+}
+
+.left { left: 20%; }
+.right { right: 20%; }
+
+/* Hiệu ứng Glitch Text */
+.glitch-text {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 10px;
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--hacker-red), -0.05em -0.025em 0 var(--glitch-blue);
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+}
+
+/* Thông tin trạng thái */
+.status-box {
+    margin-top: 10px;
+    background: rgba(255, 0, 60, 0.1);
+    padding: 5px 20px;
+    border-left: 3px solid var(--hacker-red);
+    position: relative;
+}
+
+.japanese-sub {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Thanh Progress Bar */
+.loading-bar {
+    width: 300px;
+    height: 4px;
+    background: #222;
+    margin: 25px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--hacker-red-dim);
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: var(--hacker-red);
+    box-shadow: 0 0 15px var(--hacker-red);
+    animation: fillProgress 4s infinite alternate;
+}
+
+@keyframes fillProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+.blink {
+    animation: blink 0.5s step-end infinite;
+    color: var(--hacker-red);
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.footer-info {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    display: flex;
+    justify-content: space-between;
+}

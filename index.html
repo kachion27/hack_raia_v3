@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SHOGUN_OS // BREACHING</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>hello</h1>
+    <div class="matrix-bg" id="matrix"></div>
+
+    <div class="main-wrapper">
+        <div class="cyber-torii">
+            <div class="torii-top"></div>
+            <div class="torii-pillar left"></div>
+            <div class="torii-pillar right"></div>
+        </div>
+
+        <h1 class="glitch-text" data-text="SYSTEM_HALT">SYSTEM_HALT</h1>
+        
+        <div class="status-box">
+            <p class="japanese-sub">接続中... サーバー侵入: 84%</p>
+            <div class="scanline"></div>
+        </div>
+
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="footer-info">
+            <span>LOCATION: TOKYO_03</span>
+            <span class="blink">● ENCRYPTED</span>
+        </div>
+    </div>
+
+    <script>
+        // Một chút script nhỏ để tạo mưa chữ Kanji ngẫu nhiên
+        const matrix = document.getElementById('matrix');
+        const characters = "死骸零壱悪夢闇攻殻機動隊";
+        for (let i = 0; i < 50; i++) {
+            const span = document.createElement('span');
+            span.innerText = characters[Math.floor(Math.random() * characters.length)];
+            span.style.left = Math.random() * 100 + "vw";
+            span.style.animationDuration = Math.random() * 5 + 2 + "s";
+            span.style.opacity = Math.random();
+            matrix.appendChild(span);
+        }
+    </script>
 </body>
 </html>
